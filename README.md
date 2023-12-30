@@ -2,6 +2,19 @@
 
 This is a simple Spring Boot application that connects to a MSSQL database.
 
+## copilot prompt
+```
+@workspace /new 
+幫我產生一個SpringBoot專案，
+專案包含 SpringBoot version 2.5.4 mssql-jdbc mybatis lombok Java Version 11 不要用JPA, 不要用xml mapper
+並且幫我連線到 MsSqlServer url: Localhost 1433 username: TMMPALTU password:Pot12345 dataBaseName: testdb
+專案名稱 SpringBootMybatisExample, 專案必須包含一個Controller一個Service一個mapper，一個user model
+Controller呼叫Server, Server呼叫mapper，mapper讀取users table將資料放入user model，
+mapper使用java annaction sql 不要用xml mapper，
+user model 包含id name email 三個欄位，
+userTable 包含id name email 三個欄位
+```
+
 ## Prerequisites
 
 - Java 11 or higher
@@ -27,6 +40,7 @@ docker run \
 
 ### 新增登入帳號及密碼
 ```
+
 docker exec -it mssql /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "<YourStrong@Passw0rd>" -Q "CREATE LOGIN TMMPALTU WITH PASSWORD = 'Pot12345'"
 ```
 
